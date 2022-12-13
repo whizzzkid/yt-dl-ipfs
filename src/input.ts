@@ -1,6 +1,7 @@
 import ora from 'ora';
 import inquirer from 'inquirer';
-import youtubeDl from 'youtube-dl-exec';
+import findVideo from './tasks/findVideo';
+import downloadVideo from './tasks/downloadVideo';
 
 const spinner = ora();
 export default async function input() {
@@ -13,14 +14,9 @@ export default async function input() {
                 validate: (input: string) => input.match(/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/) ? true : 'Please enter a valid YouTube URL'
             }
         ]);
-        spinner.start(`Looking Up ${ytUrl}...`);
-        const ytResp = await youtubeDl(ytUrl, {
-            dumpSingleJson: true,
-        });
-        spinner.text = `Found ${ytResp.title}`;
-        spinner.text = `Downloading ${ytResp.title}...`;
-        await youtubeDl.exec(ytUrl, { output: `tmp/${ytResp.title}` });
-        spinner.succeed(`✅ Downloaded ${ytResp.title}`);
+        const ytVideo = await findVideo(ytUrl);
+        const downloadedVideo = await downloadVideo(ytVideo);
+        console.log(downloadedVideo);
     } catch (err) {
         spinner.fail('Error: ' + err);
     }
