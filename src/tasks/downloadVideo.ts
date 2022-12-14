@@ -9,10 +9,11 @@ const spinner = ora();
 export default async function downloadVideo(ytVideo: Awaited<ReturnType<typeof youtubeDl>>) {
     try {
         spinner.start(`Downloading ${ytVideo.title}...`);
-        const filePath = path.join(TMP_PATH, sanitize(ytVideo.title, { replacement: ' ' }));
+        const fileName = sanitize(ytVideo.title, { replacement: ' ' });
+        const filePath = path.join(TMP_PATH, fileName);
         await youtubeDl.exec(ytVideo.webpage_url, { output: filePath });
         spinner.succeed(`Downloaded to ${filePath}`);
-        return `${filePath}.${ytVideo.ext}`;
+        return `${fileName}.${ytVideo.ext}`;
     } catch (err) {
         spinner.fail('Error: ' + err);
         throw err;

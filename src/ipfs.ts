@@ -1,9 +1,8 @@
 import { IPFSHTTPClient } from './../node_modules/ipfs-http-client/dist/src/index.d';
-import { create } from 'ipfs-http-client';
-import path from 'path';
+import { create, globSource } from 'ipfs-http-client';
 import { TMP_PATH } from './config';
 
-export default class IPFSClient {
+class IPFSClient {
     private client: IPFSHTTPClient;
 
     constructor() {
@@ -13,7 +12,15 @@ export default class IPFSClient {
     }
 
     async saveFile(fileName: string): Promise<string> {
-        const { cid } = await this.client.add(path.join(TMP_PATH, fileName));
-        return cid.toString();
+        const src = await globSource(TMP_PATH, fileName).next();
+        if (!src.value) {
+            throw new Error(`File not found: ${fileName}`);
+        }
+        const { content } = src.value;
+        const { cid } = await this.client.add(content);
+        return `https://ipfs.io/ipfs/${cid.toString()}`;
     }
 }
+
+const ipfsClient = new IPFSClient();
+export default ipfsClient;

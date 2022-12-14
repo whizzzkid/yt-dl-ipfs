@@ -2,6 +2,7 @@ import ora from 'ora';
 import inquirer from 'inquirer';
 import findVideo from './tasks/findVideo';
 import downloadVideo from './tasks/downloadVideo';
+import saveVideo from './tasks/saveVideo';
 
 const spinner = ora();
 export default async function input() {
@@ -16,7 +17,8 @@ export default async function input() {
         ]);
         const ytVideo = await findVideo(ytUrl);
         const downloadedVideo = await downloadVideo(ytVideo);
-        console.log(downloadedVideo);
+        const ipfsCid = await saveVideo(downloadedVideo);
+        console.log(ipfsCid);
     } catch (err) {
         spinner.fail('Error: ' + err);
     }
