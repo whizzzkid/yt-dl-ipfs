@@ -16,9 +16,9 @@ export default async function input() {
             }
         ]);
         const ytVideo = await findVideo(ytUrl);
-        const downloadedVideo = await downloadVideo(ytVideo);
-        const ipfsCid = await saveVideo(downloadedVideo);
-        console.log(ipfsCid);
+        await downloadVideo(ytVideo);
+        const playerPath = await saveVideo(ytVideo);
+        console.log(playerPath);
     } catch (err) {
         spinner.fail('Error: ' + err);
     }

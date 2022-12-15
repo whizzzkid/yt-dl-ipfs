@@ -14,7 +14,8 @@ const config = [{
     plugins: [
         json(),
         typescript()
-    ]
+    ],
+    external: ['figlet', 'ora', 'inquirer', 'youtube-dl-exec', 'fs', 'path', 'sanitize-filename', 'ipfs-http-client'],
 }, {
     plugins: [
         html({
