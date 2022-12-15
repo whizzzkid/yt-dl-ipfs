@@ -1,13 +1,13 @@
 import { IPFSHTTPClient, create, globSource } from 'ipfs-http-client';
 import youtubeDl from 'youtube-dl-exec';
-import { downloadPath, generateIPFSManifest, videoFileName, videoFilePath } from './helpers';
+import { downloadPath, generateIPFSManifest, videoFileName } from './helpers';
 
 class IPFSClient {
     private client: IPFSHTTPClient;
 
     constructor() {
         this.client = create({
-            url: process.env.IPFS_API_URL || 'http://localhost:5001/api/v0',
+            url: process.env.IPFS_API_URL || 'http://127.0.0.1:5001/api/v0',
         });
     }
 
@@ -18,10 +18,6 @@ class IPFSClient {
         }
         const { content } = src.value;
         const { cid } = await this.client.add(content);
-        console.log({
-            ...ytVideo,
-            ifps: generateIPFSManifest(cid.toString(), ytVideo)
-        });
         const { cid: manifestCid } = await this.client.add(JSON.stringify({
             ...ytVideo,
             ifps: generateIPFSManifest(cid.toString(), ytVideo)

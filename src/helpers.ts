@@ -21,7 +21,7 @@ export function manifestFilePath(ytVideo: Awaited<ReturnType<typeof youtubeDl>>)
 
 export function generateIPFSManifest(cid: string, ytVideo: Awaited<ReturnType<typeof youtubeDl>>) {
     const { id, title, description, webpage_url, thumbnail, duration, ext, format, format_id, protocol, format_note, tbr, width, height, fps, vcodec, acodec, asr } = ytVideo;
-    return JSON.stringify({
+    return {
         cid,
         id,
         title,
@@ -41,5 +41,5 @@ export function generateIPFSManifest(cid: string, ytVideo: Awaited<ReturnType<ty
         vcodec,
         acodec,
         asr
-    });
+    };
 }

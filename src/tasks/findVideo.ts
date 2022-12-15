@@ -9,7 +9,7 @@ export default async function findVideo(ytUrl: string) {
         const ytResp = await youtubeDl(ytUrl, {
             dumpSingleJson: true,
         });
-        spinner.succeed(`✅ Found ${ytResp.title}`);
+        spinner.succeed(`Found ${ytResp.title}`);
         return ytResp;
     } catch (err) {
         spinner.fail('Error: ' + err);
