@@ -1,6 +1,7 @@
 FROM node:18-alpine
 
 ENV PYTHONUNBUFFERED=1
+ENV PLAYER_PATH=https://whizzzkid.github.io/yt-dl-ipfs/
 RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip

@@ -1,15 +1,16 @@
+import { IPFS_API_URL } from './../config';
 import { ReactiveController, ReactiveControllerHost } from 'lit';
 
 export default class IPFSVideoSourceController {
     host: ReactiveControllerHost;
     value: {
-        muted: 'muted' | 'unmuted';
         src: string;
         title: string;
+        webpage_url: string;
     } = {
-        muted: 'muted',
         src: '',
         title: '',
+        webpage_url: '',
     };
 
     constructor(host: ReactiveControllerHost) {
@@ -19,11 +20,16 @@ export default class IPFSVideoSourceController {
     }
 
     private async fetchVideo() {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const { hash } = window.location;
+        const manifestCid = hash.substring(1);
+        const response = await fetch(`https://ipfs.io/ipfs/${manifestCid}`);
+        const responseJson = JSON.parse(await response.text());
+        console.log(responseJson);
+        const { ipfs: {cid, title, webpage_url} } = responseJson;
         this.value = {
-            src: 'https://cloudflare-ipfs.com/ipfs/QmcTC1cxYH3goM5TvyUdXqXXokSqg1HYRifV75y2EHJMs1',
-            title: 'The Internet Archive',
-            muted: 'unmuted',
+            src: `https://ipfs.io/ipfs/${cid}`,
+            title,
+            webpage_url
         }
         this.host.requestUpdate();
     }

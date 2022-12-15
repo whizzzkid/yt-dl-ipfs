@@ -6,7 +6,7 @@ import IPFSVideoSourceController from './IPFSVideoSourceController';
 @customElement('ipfs-player')
 export class IpfsPlayer extends LitElement {
     static styles = css`
-        video {
+        video, h2 {
             width: 80%;
             max-width: 80%;
         }
@@ -40,6 +40,8 @@ export class IpfsPlayer extends LitElement {
                     <source src="${this.videoMeta.value.src}" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
+                <h2>${this.videoMeta.value.title}</h2>
+                <a href="${this.videoMeta.value.webpage_url}" target="_blank">View on YouTube</a>
             </center>
         `;
     }

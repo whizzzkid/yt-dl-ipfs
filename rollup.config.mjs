@@ -23,9 +23,7 @@ const config = [{
             minify: true,
         }),
         typescript(),
-        // Resolve bare module specifiers to relative paths
         resolve(),
-        // Optional: copy any static assets to build directory
         copy({
             patterns: ['images/**/*'],
         }),

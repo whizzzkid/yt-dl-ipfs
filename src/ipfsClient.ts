@@ -1,3 +1,4 @@
+import { PLAYER_PATH, IPFS_API_URL } from './config';
 import { IPFSHTTPClient, create, globSource } from 'ipfs-http-client';
 import youtubeDl from 'youtube-dl-exec';
 import { downloadPath, generateIPFSManifest, videoFileName } from './helpers';
@@ -7,7 +8,7 @@ class IPFSClient {
 
     constructor() {
         this.client = create({
-            url: process.env.IPFS_API_URL || 'http://127.0.0.1:5001/api/v0',
+            url: IPFS_API_URL,
         });
     }
 
@@ -20,9 +21,9 @@ class IPFSClient {
         const { cid } = await this.client.add(content);
         const { cid: manifestCid } = await this.client.add(JSON.stringify({
             ...ytVideo,
-            ifps: generateIPFSManifest(cid.toString(), ytVideo)
+            ipfs: generateIPFSManifest(cid.toString(), ytVideo)
         }));
-        return `https://https://whizzzkid.github.io/yt-dl-ipfs/#${manifestCid.toString()}`;
+        return `${PLAYER_PATH}#${manifestCid.toString()}`;
     }
 }
 
