@@ -8,7 +8,7 @@ This Image accepts `IPFS_API_URL` as an env variable, otherwise defaults to loca
 
 ```sh
 $ docker pull whizzzkid/yt-dl-ipfs:latest
-$ docker run -if whizzzkid/yt-dl-ipfs:latest
+$ docker run -it whizzzkid/yt-dl-ipfs:latest
 ```
 
 ## Building Uploader locally
