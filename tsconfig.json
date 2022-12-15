@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ESNext"
-    ],
+    "experimentalDecorators": true,
+    "lib": ["ESNext", "DOM"],
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",
@@ -14,5 +13,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
+    "useDefineForClassFields": false
   }
 }
