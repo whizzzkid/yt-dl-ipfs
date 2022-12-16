@@ -1,6 +1,5 @@
 FROM node:18-alpine
 
-ARG VERSION
 ENV PYTHONUNBUFFERED=1
 ENV NODE_NO_WARNINGS=1
 ENV PLAYER_PATH="https://yt-dl-ipfs.live/"
@@ -12,7 +11,6 @@ RUN pip3 install --no-cache --upgrade pip
 # Copy the rest of the files
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
-RUN npm version $VERSION --no-git-tag-version
 COPY ./dist/index.js ./dist/index.js
 
 CMD [ "npm", "--silent", "start" ]

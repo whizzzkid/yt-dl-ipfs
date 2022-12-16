@@ -56,6 +56,7 @@ jobs:
       # Run BUILD
       - run: npm ci
       - run: npm run build
+      - run: npm version ${{ steps.semver.outputs.version }}
       # Push Pages Artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
@@ -69,8 +70,6 @@ jobs:
           context: .
           file: ci.dockerfile
           push: true
-          build-args: |
-            VERSION: ${{ steps.semver.outputs.version }}
           tags: |
             whizzzkid/yt-dl-ipfs:latest
             whizzzkid/yt-dl-ipfs:${{ steps.semver.outputs.version }}
