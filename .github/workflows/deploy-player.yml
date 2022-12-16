@@ -64,6 +64,7 @@ jobs:
         if: ${{ steps.semver.outputs.released == 'true' }}
         uses: docker/build-push-action@v3
         with:
+          context: .
           file: ci.dockerfile
           push: true
           build-args: |
