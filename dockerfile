@@ -8,8 +8,8 @@ RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip
 
-COPY . .
-RUN npm ci && npm run build
-RUN rm -rf src
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+COPY ./dist/index.js ./dist/index.js
 
 CMD [ "npm", "--silent", "start" ]
