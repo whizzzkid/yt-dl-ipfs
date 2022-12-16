@@ -35,7 +35,7 @@ export class IpfsPlayer extends LitElement {
                     playsinline
                     controls
                     autoplay
-                    muted="muted"
+                    muted
                 >
                     <source src="${this.videoMeta.value.src}" type="video/webm">
                     Your browser does not support the video tag.

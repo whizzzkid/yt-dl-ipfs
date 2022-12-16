@@ -1,4 +1,3 @@
-import { IPFS_API_URL } from './../config';
 import { ReactiveController, ReactiveControllerHost } from 'lit';
 
 export default class IPFSVideoSourceController {
@@ -21,7 +20,7 @@ export default class IPFSVideoSourceController {
 
     private async fetchVideo() {
         const { hash } = window.location;
-        const manifestCid = hash.substring(1);
+        const manifestCid = (hash || '#QmPQudMCKchspxjDzQVXsd3kGoiAaQy3qzrxGRLkt1iyvX').substring(1);
         const response = await fetch(`https://ipfs.io/ipfs/${manifestCid}`);
         const responseJson = JSON.parse(await response.text());
         console.log(responseJson);
