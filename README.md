@@ -1,3 +1,8 @@
+<p align="center">
+    <img src="./src/player/images/logo.png" width="250"><br>
+    <img src="https://github.com/whizzzkid/yt-dl-ipfs/actions/workflows/deploy-player.yml/badge.svg?branch=main">
+</p>
+
 # yt-dl-ipfs
 
 Download and pin yt videos to IPFS.
