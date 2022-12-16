@@ -12,7 +12,6 @@ Download and pin yt videos to IPFS.
 This Image accepts `IPFS_API_URL` as an env variable, otherwise defaults to localhost
 
 ```sh
-$ docker pull whizzzkid/yt-dl-ipfs:latest
 $ docker run -it whizzzkid/yt-dl-ipfs:latest
 ```
 
