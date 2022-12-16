@@ -47,5 +47,9 @@
     "start_url": "/",
     "display": "fullscreen",
     "theme_color": "#eee",
-    "background_color": "#202020"
+    "background_color": "#202020",
+    "scope": "/",
+    "url_handlers": {
+        "origin": "https://yt-dl-ipfs.live/"
+    }
 }

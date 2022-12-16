@@ -2,7 +2,7 @@ FROM node:18-alpine
 
 ENV PYTHONUNBUFFERED=1
 ENV NODE_NO_WARNINGS=1
-ENV PLAYER_PATH="https://whizzzkid.github.io/yt-dl-ipfs/"
+ENV PLAYER_PATH="https://yt-dl-ipfs.live/"
 ENV IPFS_API_URL="http://host.docker.internal:5001"
 RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
