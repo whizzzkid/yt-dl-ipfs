@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>yt-dl-ipfs Video Player</title>
+        <link rel="manifest" href="manifest.webmanifest" />
+        <link rel="icon" href="images/icons/favicon.ico" />
         <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400&subset=latin,latin-ext);
         html, body {
@@ -23,5 +25,13 @@
     <body>
         <script type="module" src="player.ts"></script>
         <ipfs-player></ipfs-player>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', async () => {
+                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    console.log('SW registered: ', registration);
+                })
+            }
+        </script>
     </body>
 <html>

@@ -1,5 +1,6 @@
 import { copy } from '@web/rollup-plugin-copy';
-import {rollupPluginHTML as html} from '@web/rollup-plugin-html';
+import { generateSW } from 'rollup-plugin-workbox';
+import { rollupPluginHTML as html } from '@web/rollup-plugin-html';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
@@ -21,15 +22,21 @@ const config = [{
         html({
             input: 'src/player/index.html',
             minify: true,
+            extractAssets: false
         }),
         typescript(),
         resolve(),
         copy({
-            patterns: ['images/**/*'],
+            patterns: ['images/**/*', 'manifest.webmanifest'],
+            rootDir: 'src/player',
         }),
+        generateSW({
+            globDirectory: 'dist/player',
+            swDest: 'dist/player/sw.js',
+        })
     ],
     output: {
-        dir: 'dist/player',
+        dir: 'dist/player'
     },
     preserveEntrySignatures: 'strict',
 }];
