@@ -9,9 +9,6 @@ RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip
 
-# On CI this gets built first so we don't need to do it again.
-RUN [[ ! -d "./dist" ]] && npm ci && npm run build
-
 # Copy the rest of the files
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
