@@ -56,7 +56,7 @@ jobs:
       # Run BUILD
       - run: npm ci
       - run: npm run build
-      - run: npm version ${{ steps.semver.outputs.version }}
+      - run: npm version ${{ steps.semver.outputs.version }} --no-git-tag-version
       # Push Pages Artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
