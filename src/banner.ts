@@ -1,13 +1,13 @@
 import figlet from 'figlet';
-import {name, version} from '../package.json';
+import fs from 'fs';
+import { join } from 'path';
 
-export default async function banner(): Promise<string> {
-    return new Promise((resolve, reject) => {
-        figlet(name, function (err, data) {
-            if (err) {
-                reject(err);
-            }
-            resolve(`${data} v${version}\n\n` as string);
-        });
-    });
+function loadPkgInfo() {
+    const pkgFile = join(process.cwd(), 'package.json');
+    return JSON.parse(fs.readFileSync(pkgFile).toString());
+}
+
+export default async function banner(): Promise<void> {
+    const { name, version } = loadPkgInfo();
+    console.log(`${figlet.textSync(name)} v${version}\n\n`);
 }

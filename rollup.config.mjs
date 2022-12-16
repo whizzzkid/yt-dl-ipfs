@@ -1,6 +1,7 @@
 import { copy } from '@web/rollup-plugin-copy';
 import { generateSW } from 'rollup-plugin-workbox';
 import { rollupPluginHTML as html } from '@web/rollup-plugin-html';
+import autoExternal from 'rollup-plugin-auto-external';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
@@ -13,10 +14,10 @@ const config = [{
         format: 'es'
     },
     plugins: [
+        autoExternal(),
         json(),
-        typescript()
-    ],
-    external: ['figlet', 'ora', 'inquirer', 'youtube-dl-exec', 'fs', 'path', 'sanitize-filename', 'ipfs-http-client'],
+        typescript(),
+    ]
 }, {
     plugins: [
         html({
