@@ -35,8 +35,6 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           release-type: node
           package-name: yt-dl-ipfs
-          command: github-release
-          default-branch: main
           changelog-notes-type: github
       # Checkout Code
       - name: Checkout
