@@ -7,6 +7,22 @@
 
 Download and pin yt videos to IPFS.
 
+## Using NPM or yarn
+
+```sh
+$ npm i -g yt-dl-ipfs     # yarn global add yt-dl-ipfs
+$ yt-dl-ipfs
+        _            _ _       _        __
+  _   _| |_       __| | |     (_)_ __  / _|___
+ | | | | __|____ / _` | |_____| | '_ \| |_/ __|
+ | |_| | ||_____| (_| | |_____| | |_) |  _\__ \
+  \__, |\__|     \__,_|_|     |_| .__/|_| |___/
+  |___/                         |_|             v0.0.1
+
+
+? Enter YouTube URL:
+```
+
 ## Running With Docker
 
 This Image accepts `IPFS_API_URL` as an env variable, otherwise defaults to localhost
