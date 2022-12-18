@@ -11,6 +11,7 @@ import typescript from '@rollup/plugin-typescript';
 const config = [{
     input: 'src/index.ts',
     output: {
+        'banner': '#!/usr/bin/env node',
         dir: 'dist',
         format: 'es'
     },

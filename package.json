@@ -2,6 +2,10 @@
   "name": "yt-dl-ipfs",
   "version": "0.1.4",
   "type": "module",
+  "description": "Download YouTube videos and upload them to IPFS",
+  "bin": {
+    "yt-dl-ipfs": "./dist/index.js"
+  },
   "dependencies": {
     "figlet": "1.5.2",
     "inquirer": "9.1.4",
@@ -41,7 +45,7 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "build": "rm -rf ./dist && rollup -c --bundleConfigAsCjs",
+    "build": "rm -rf ./dist && rollup -c --bundleConfigAsCjs && chmod +x ./dist/index.js",
     "dev": "npm-watch",
     "serve": "DEV_SERVER_ROOT=./dist/player dev-server"
   }
