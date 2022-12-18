@@ -30,12 +30,13 @@ jobs:
     steps:
       # Create Release PR
       - uses: google-github-actions/release-please-action@v3
-        id: semver
+        id: release
         with:
           token: ${{ secrets.GH_PAT }}
           release-type: node
           package-name: yt-dl-ipfs
           command: github-release
+          default-branch: main
           changelog-notes-type: github
       # Checkout Code
       - name: Checkout
