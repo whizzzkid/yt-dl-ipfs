@@ -1,6 +1,18 @@
 # Changelog
 
 ## What's Changed
+* fix: automatic releases - going forward by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/15
+* feat: Implemented error handling + loop by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/16
+* fix: using gh_pat instead of token by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/17
+* fix: step id + default_branch by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/18
+* fix: another try by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/19
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.0...v0.1.1
+
+## Changelog
+
+## What's Changed
 * feat: Fixing and Automating builds to docker by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/2
 * fix missing context by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/3
 * fix: missing qemu by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/4
