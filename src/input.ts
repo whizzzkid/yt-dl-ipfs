@@ -1,7 +1,7 @@
-import ora from 'ora';
 import inquirer from 'inquirer';
-import findVideo from './tasks/findVideo';
+import ora from 'ora';
 import downloadVideo from './tasks/downloadVideo';
+import findVideo from './tasks/findVideo';
 import saveVideo from './tasks/saveVideo';
 
 const spinner = ora();

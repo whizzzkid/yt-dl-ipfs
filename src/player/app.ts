@@ -1,8 +1,8 @@
 import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import './pages/IpfsPlayer/IpfsPlayer';
 import './pages/homepage/Homepage';
+import './pages/IpfsPlayer/IpfsPlayer';
 
 @customElement('ipfs-player-app')
 export class App extends LitElement {
