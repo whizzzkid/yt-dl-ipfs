@@ -3,6 +3,7 @@ import { generateSW } from 'rollup-plugin-workbox';
 import { rollupPluginHTML as html } from '@web/rollup-plugin-html';
 import autoExternal from 'rollup-plugin-auto-external';
 import json from '@rollup/plugin-json';
+import minifyHTML from 'rollup-plugin-minify-html-template-literals'
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
@@ -25,15 +26,12 @@ const config = [{
             minify: true,
             extractAssets: false
         }),
+        minifyHTML(),
         typescript(),
         resolve(),
         copy({
             patterns: ['images/**/*', 'manifest.webmanifest'],
-            rootDir: 'src/player',
-        }),
-        generateSW({
-            globDirectory: 'dist/player',
-            swDest: 'dist/player/sw.js',
+            rootDir: 'src/player'
         })
     ],
     output: {
@@ -43,7 +41,16 @@ const config = [{
 }];
 
 if (process.env.NODE_ENV !== 'development') {
-    config.forEach(conf => conf.plugins.push(terser.default()));
+    config.forEach(conf => conf.plugins.push(terser.default({
+        format: {
+            comments: false
+        },
+    })));
+    // add service worker only for non-dev builds.
+    config[1].plugins.push(generateSW({
+        globDirectory: 'dist/player',
+        swDest: 'dist/player/sw.js'
+    }));
 }
 
 export default config;
