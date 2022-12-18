@@ -33,7 +33,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           package-name: yt-dl-ipfs
-          command: github-release
+          command: release-pr
           changelog-notes-type: github
           release-as: v0.1.0
       # Checkout Code
