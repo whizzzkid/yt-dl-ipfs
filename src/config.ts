@@ -1,4 +1,4 @@
-import {resolve} from 'path';
+import { resolve } from 'path';
 
 export const TMP_PATH = resolve(process.cwd(), 'tmp');
 export const PLAYER_PATH = process.env.PLAYER_PATH || 'https://whizzzkid.github.io/yt-dl-ipfs/';

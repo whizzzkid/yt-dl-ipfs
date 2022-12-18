@@ -1,6 +1,6 @@
-import { ref, createRef, Ref } from 'lit/directives/ref.js';
-import { LitElement, html, css } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
+import { createRef, ref, Ref } from 'lit/directives/ref.js';
 import IPFSVideoSourceController from '../../controllers/IPFSVideoSourceController';
 
 @customElement('ipfs-player')

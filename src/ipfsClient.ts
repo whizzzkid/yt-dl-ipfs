@@ -1,6 +1,6 @@
-import { PLAYER_PATH, IPFS_API_URL } from './config';
-import { IPFSHTTPClient, create, globSource } from 'ipfs-http-client';
+import { create, globSource, IPFSHTTPClient } from 'ipfs-http-client';
 import youtubeDl from 'youtube-dl-exec';
+import { IPFS_API_URL, PLAYER_PATH } from './config';
 import { downloadPath, generateIPFSManifest, videoFileName } from './helpers';
 
 class IPFSClient {
