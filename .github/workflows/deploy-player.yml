@@ -52,8 +52,6 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: npm run build
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm version ${{ steps.semver.outputs.tag_name }}
-        if: ${{ steps.release.outputs.release_created }}
       # Push Pages Artifact
       - name: Upload artifact
         if: ${{ steps.release.outputs.release_created }}
@@ -85,7 +83,7 @@ jobs:
           push: true
           tags: |
             whizzzkid/yt-dl-ipfs:latest
-            whizzzkid/yt-dl-ipfs:${{ steps.semver.outputs.tag_name }}
+            whizzzkid/yt-dl-ipfs:${{ steps.release.outputs.tag_name }}
           platforms: |
             linux/amd64
             linux/arm64
