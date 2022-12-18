@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           package-name: yt-dl-ipfs
-          command: github-release
+          command: release-pr
       # Checkout Code
       - name: Checkout
         uses: actions/checkout@v3
