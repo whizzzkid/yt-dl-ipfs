@@ -32,7 +32,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: semver
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
           release-type: node
           package-name: yt-dl-ipfs
           command: github-release
