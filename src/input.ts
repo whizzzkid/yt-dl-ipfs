@@ -11,14 +11,15 @@ export default async function input() {
             {
                 type: 'input',
                 name: 'ytUrl',
-                message: 'Enter YouTube URL:',
-                validate: (input: string) => input.match(/^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/) ? true : 'Please enter a valid YouTube URL'
+                message: 'Enter YouTube URL [Ctrl+C to Exit]:',
+                validate: (input: string) => input.match(/^(https?\:\/\/)?((www)?\.youtube\.com|youtu\.?be)\/.+$/) ? true : 'Please enter a valid YouTube URL'
             }
         ]);
         const ytVideo = await findVideo(ytUrl);
         await downloadVideo(ytVideo);
         const playerPath = await saveVideo(ytVideo);
         console.log(playerPath);
+        await input();
     } catch (err) {
         spinner.fail('Error: ' + err);
     }
