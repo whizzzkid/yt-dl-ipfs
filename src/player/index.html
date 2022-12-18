@@ -10,8 +10,7 @@
             font-style: normal;
             font-weight: 400;
             margin: 0;
-            height: 100%;
-            overflow: hidden
+            height: 100%
         }
         body {
             color: #eee;
@@ -23,8 +22,8 @@
         </style>
     </head>
     <body>
-        <script type="module" src="player.ts"></script>
-        <ipfs-player></ipfs-player>
+        <script type="module" src="app.ts"></script>
+        <ipfs-player-app></ipfs-player-app>
         <script>
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', async () => {
