@@ -52,6 +52,11 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: npm run build
         if: ${{ steps.release.outputs.release_created }}
+      # Push NPM Packgae
+      - run: npm publish
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       # Push Pages Artifact
       - name: Upload artifact
         if: ${{ steps.release.outputs.release_created }}
@@ -88,12 +93,6 @@ jobs:
             linux/amd64
             linux/arm64
             linux/arm/v7
-      # Push NPM Packgae
-      - run: npm publish
-        if: ${{ steps.release.outputs.release_created }}
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-
 
   # Deployment job
   deploy:
