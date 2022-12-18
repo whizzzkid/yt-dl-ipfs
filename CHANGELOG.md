@@ -1,6 +1,14 @@
 # Changelog
 
 ## What's Changed
+* fix: release-please by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/26
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.3...v0.1.4
+
+## Changelog
+
+## What's Changed
 * Fix: player load error by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/24
 
 
