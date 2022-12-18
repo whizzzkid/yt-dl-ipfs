@@ -25,6 +25,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    outputs:
+      released: ${{ steps.release.outputs.release_created }}
     steps:
       # Create Release PR
       - uses: google-github-actions/release-please-action@v3
@@ -33,7 +35,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           package-name: yt-dl-ipfs
-          command: github-release
+          command: release-pr
           changelog-notes-type: github
           release-as: v0.1.0
       # Checkout Code
@@ -104,6 +106,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    if: ${{ needs.build.outputs.released }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
