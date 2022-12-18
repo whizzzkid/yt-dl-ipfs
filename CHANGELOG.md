@@ -1,6 +1,14 @@
 # Changelog
 
 ## What's Changed
+* fix: bin-path for npm installs by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/28
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.4...v0.1.5
+
+## Changelog
+
+## What's Changed
 * fix: release-please by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/26
 
 
