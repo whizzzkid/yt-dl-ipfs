@@ -1,6 +1,15 @@
 # Changelog
 
 ## What's Changed
+* fix: handling video load error by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/21
+* fix: import order by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/22
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.1...v0.1.2
+
+## Changelog
+
+## What's Changed
 * fix: automatic releases - going forward by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/15
 * feat: Implemented error handling + loop by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/16
 * fix: using gh_pat instead of token by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/17
