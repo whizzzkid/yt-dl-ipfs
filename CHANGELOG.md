@@ -1,6 +1,14 @@
 # Changelog
 
 ## What's Changed
+* fix: access to package.json by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/30
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.5...v0.1.6
+
+## Changelog
+
+## What's Changed
 * fix: bin-path for npm installs by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/28
 
 
