@@ -21,14 +21,23 @@ export default class IPFSVideoSourceController {
     }
 
     private async fetchVideo() {
-        const response = await fetch(`https://ipfs.io/ipfs/${this.hash}`);
-        const responseJson = JSON.parse(await response.text());
-        console.log(`Response From IPFS:`, responseJson);
-        const { ipfs: {cid, title, webpage_url} } = responseJson;
-        this.value = {
-            src: `https://ipfs.io/ipfs/${cid}`,
-            title,
-            webpage_url
+        try {
+            const response = await fetch(`https://ipfs.io/ipfs/${this.hash}`);
+            const responseJson = JSON.parse(await response.text());
+            console.log(`Response From IPFS:`, responseJson);
+            const { ipfs: {cid, title, webpage_url} } = responseJson;
+            this.value = {
+                src: `https://ipfs.io/ipfs/${cid}`,
+                title,
+                webpage_url
+            }
+        } catch (e) {
+            this.value = {
+                src: '',
+                title: 'Error Loading Video',
+                webpage_url: ''
+            }
+            console.error(e);
         }
         this.host.requestUpdate();
     }
