@@ -1,10 +1,22 @@
 import { ref, createRef, Ref } from 'lit/directives/ref.js';
 import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import IPFSVideoSourceController from './IPFSVideoSourceController';
+import { customElement, property, state } from 'lit/decorators.js';
+import IPFSVideoSourceController from '../../controllers/IPFSVideoSourceController';
 
 @customElement('ipfs-player')
-export class IpfsPlayer extends LitElement {
+export default class IpfsPlayer extends LitElement {
+
+    @property()
+    hash: string = '';
+
+    @state()
+    videoMeta: IPFSVideoSourceController = {} as IPFSVideoSourceController;
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.videoMeta = new IPFSVideoSourceController(this, this.hash);
+    }
+
     static styles = css`
         video, h2 {
             width: 80%;
@@ -16,9 +28,6 @@ export class IpfsPlayer extends LitElement {
     `;
 
     videoPlayerRef: Ref<HTMLMediaElement> = createRef();
-
-    @property()
-    private videoMeta = new IPFSVideoSourceController(this);
 
     updated() {
         if (this.videoPlayerRef.value) {
@@ -45,4 +54,7 @@ export class IpfsPlayer extends LitElement {
             </center>
         `;
     }
+}
+function connectedCallback() {
+    throw new Error('Function not implemented.');
 }
