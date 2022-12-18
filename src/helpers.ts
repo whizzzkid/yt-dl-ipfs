@@ -20,26 +20,46 @@ export function manifestFilePath(ytVideo: Awaited<ReturnType<typeof youtubeDl>>)
 }
 
 export function generateIPFSManifest(cid: string, ytVideo: Awaited<ReturnType<typeof youtubeDl>>) {
-    const { id, title, description, webpage_url, thumbnail, duration, ext, format, format_id, protocol, format_note, tbr, width, height, fps, vcodec, acodec, asr } = ytVideo;
-    return {
-        cid,
-        id,
-        title,
+    const {
+        acodec,
+        asr,
         description,
-        webpage_url,
-        thumbnail,
         duration,
         ext,
-        format,
         format_id,
-        protocol,
         format_note,
-        tbr,
-        width,
-        height,
+        format,
         fps,
+        height,
+        id,
+        protocol,
+        tbr,
+        thumbnail,
+        title,
         vcodec,
+        webpage_url,
+        width
+    } = ytVideo;
+
+    return {
         acodec,
-        asr
+        asr,
+        cid,
+        description,
+        duration,
+        ext,
+        format_id,
+        format_note,
+        format,
+        fps,
+        height,
+        id,
+        protocol,
+        tbr,
+        thumbnail,
+        title,
+        vcodec,
+        webpage_url,
+        width
     };
 }
