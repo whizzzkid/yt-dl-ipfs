@@ -1,6 +1,14 @@
 # Changelog
 
 ## What's Changed
+* Fix: player load error by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/24
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.2...v0.1.3
+
+## Changelog
+
+## What's Changed
 * fix: handling video load error by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/21
 * fix: import order by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/22
 
