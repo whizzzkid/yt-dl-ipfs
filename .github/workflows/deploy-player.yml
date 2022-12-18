@@ -60,11 +60,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: './dist/player/'
-      # Push NPM Packgae
-      - run: npm publish
-        if: ${{ steps.release.outputs.release_created }}
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       # Docker
       # Log into Docker Hub
       - name: Login to Docker Hub
@@ -95,6 +90,11 @@ jobs:
             linux/amd64
             linux/arm64
             linux/arm/v7
+      # Push NPM Packgae
+      - run: npm publish
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
 
   # Deployment job
