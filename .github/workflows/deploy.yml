@@ -93,6 +93,12 @@ jobs:
             linux/amd64
             linux/arm64
             linux/arm/v7
+      - name: Docker Hub Description
+        if: ${{ steps.release.outputs.release_created }}
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
   # Deployment job
   deploy:

@@ -9,6 +9,8 @@ export class App extends LitElement {
     private hash: string = window?.location?.hash.substring(1);
 
     render() {
-        return this.hash ? html`<ipfs-player hash=${this.hash}></ipfs-player>` : html`<home-page></home-page>`;
+        return html`<center>${this.hash ?
+            html`<ipfs-player hash=${this.hash}></ipfs-player>` :
+            html`<home-page></home-page>`}</center>`;
     }
 }
