@@ -1,6 +1,14 @@
 # Changelog
 
 ## What's Changed
+* fix: Homepage and Player styling by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/35
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.7...v0.1.8
+
+## Changelog
+
+## What's Changed
 * fix: deploy steps by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/32
 * fix: missed rename by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/34
 
