@@ -36,9 +36,9 @@ export default class IpfsPlayer extends LitElement {
     }
 
     render() {
-        return html`
-            <center>
-                <h1>This video is playing over IPFS!</h1>
+        return html`${this.videoMeta.value.src === '' ?
+            html`<h1>Loading...</h1>` :
+            html`<h1>This video is playing over IPFS!</h1>
                 <video
                     ${ref(this.videoPlayerRef)}
                     playsinline
@@ -50,11 +50,7 @@ export default class IpfsPlayer extends LitElement {
                     Your browser does not support the video tag.
                 </video>
                 <h2>${this.videoMeta.value.title}</h2>
-                <a href="${this.videoMeta.value.webpage_url}" target="_blank">View on YouTube</a>
-            </center>
-        `;
+                <a href="${this.videoMeta.value.webpage_url}" target="_blank">View on YouTube</a>`
+        }`;
     }
-}
-function connectedCallback() {
-    throw new Error('Function not implemented.');
 }

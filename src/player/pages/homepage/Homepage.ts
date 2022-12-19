@@ -8,7 +8,9 @@ const ASSET_URL = 'https://raw.githubusercontent.com/whizzzkid/yt-dl-ipfs/main';
 export default class Homepage extends LitElement {
     static styles?: CSSResultGroup = css`
         zero-md {
-            margin: 5% 10%;
+            text-align: left;
+            padding: 5%;
+            max-width: 600px;
         }
     `;
 
