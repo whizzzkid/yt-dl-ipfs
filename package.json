@@ -1,6 +1,6 @@
 {
   "name": "yt-dl-ipfs",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "type": "module",
   "description": "Download YouTube videos and upload them to IPFS",
   "bin": {

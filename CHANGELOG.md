@@ -1,6 +1,14 @@
 # Changelog
 
 ## What's Changed
+* fix: adding pre-req by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/37
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.8...v0.1.9
+
+## Changelog
+
+## What's Changed
 * fix: Homepage and Player styling by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/35
 
 
