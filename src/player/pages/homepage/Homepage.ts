@@ -17,6 +17,12 @@ export default class Homepage extends LitElement {
     render() {
         return html`<zero-md src="${ASSET_URL}/README.md">
             <template>
+            <style>
+                a {
+                    text-decoration: none;
+                    color: #eee;
+                }
+            </style>
             </template>
         </zero-md>`;
     }
