@@ -1,6 +1,14 @@
 # Changelog
 
 ## What's Changed
+* fix: readme auto-update semver by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/39
+
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.9...v0.1.10
+
+## Changelog
+
+## What's Changed
 * fix: adding pre-req by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/37
 
 
