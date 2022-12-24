@@ -9,6 +9,10 @@
 
 Download and pin yt videos to IPFS.
 
+## Pre-Req
+
+IPFS node needs to be running locally, exposing API on port 5001, or run [IPFS-Desktop](https://github.com/ipfs/ipfs-desktop).
+
 ## Using NPM or yarn
 
 ```sh
