@@ -36,6 +36,8 @@ jobs:
           release-type: node
           package-name: yt-dl-ipfs
           changelog-notes-type: github
+          extra-files: |
+            README.md
       # Checkout Code
       - name: Checkout
         uses: actions/checkout@v3

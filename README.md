@@ -5,6 +5,8 @@
     <img src="https://img.shields.io/npm/dm/yt-dl-ipfs?label=npm-downloads&style=flat-square">
 </p>
 
+[comment]: # (x-release-please-version)
+
 # [yt-dl-ipfs](https://github.com/whizzzkid/yt-dl-ipfs)
 
 Download and pin yt videos to IPFS.
@@ -23,7 +25,7 @@ $ yt-dl-ipfs
  | | | | __|____ / _` | |_____| | '_ \| |_/ __|
  | |_| | ||_____| (_| | |_____| | |_) |  _\__ \
   \__, |\__|     \__,_|_|     |_| .__/|_| |___/
-  |___/                         |_|             v0.0.1
+  |___/                         |_|             v0.1.9
 
 
 ? Enter YouTube URL:
@@ -53,7 +55,7 @@ $ docker run -it whizzkid/yt-dl-ipfs:latest
  | | | | __|____ / _` | |_____| | '_ \| |_/ __|
  | |_| | ||_____| (_| | |_____| | |_) |  _\__ \
   \__, |\__|     \__,_|_|     |_| .__/|_| |___/
-  |___/                         |_|             v0.0.1
+  |___/                         |_|             v0.1.9
 
 
 ? Enter YouTube URL:
@@ -73,7 +75,7 @@ $ npm run build && npm start
  | | | | __|____ / _` | |_____| | '_ \| |_/ __|
  | |_| | ||_____| (_| | |_____| | |_) |  _\__ \
   \__, |\__|     \__,_|_|     |_| .__/|_| |___/
-  |___/                         |_|             v0.0.1
+  |___/                         |_|             v0.1.9
 
 
 ? Enter YouTube URL:
@@ -88,9 +90,11 @@ But you can build it locally:
 ```sh
 $ npm ci
 $ npm run dev
-> yt-dl-ipfs@0.0.1 dev
+> yt-dl-ipfs@0.1.9 dev
 > npm-watch
-
+```
+[comment]: # (x-release-please-end)
+```sh
 No task specified. Will go through all possible tasks
 [build] [nodemon] 2.0.20
 [serve] dev-server PID 84697
