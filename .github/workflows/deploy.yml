@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       released: ${{ steps.release.outputs.release_created }}
+      tag: ${{ steps.release.outputs.tag_name }}
     steps:
       # Create Release PR
       - uses: google-github-actions/release-please-action@v3
@@ -86,7 +87,7 @@ jobs:
           push: true
           tags: |
             whizzzkid/yt-dl-ipfs:latest
-            whizzzkid/yt-dl-ipfs:${{ steps.release.outputs.tag_name }}
+            whizzzkid/yt-dl-ipfs:${{ needs.semver.outputs.tag }}
           platforms: |
             linux/amd64
             linux/arm64
