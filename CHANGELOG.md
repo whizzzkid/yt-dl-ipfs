@@ -1,6 +1,16 @@
 # Changelog
 
 ## What's Changed
+* chore(deps): bump json5 from 2.2.1 to 2.2.3 by @dependabot in https://github.com/whizzzkid/yt-dl-ipfs/pull/41
+
+## New Contributors
+* @dependabot made their first contribution in https://github.com/whizzzkid/yt-dl-ipfs/pull/41
+
+**Full Changelog**: https://github.com/whizzzkid/yt-dl-ipfs/compare/v0.1.10...v0.1.11
+
+## Changelog
+
+## What's Changed
 * fix: readme auto-update semver by @whizzzkid in https://github.com/whizzzkid/yt-dl-ipfs/pull/39
 
 
