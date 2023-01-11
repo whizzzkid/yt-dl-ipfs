@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/npm/dm/yt-dl-ipfs?label=npm-downloads&style=flat-square">
 </p>
 
-[comment]: # (x-release-please-version)
+[comment]: # (x-release-please-start-version)
 
 # [yt-dl-ipfs](https://github.com/whizzzkid/yt-dl-ipfs)
 
@@ -25,7 +25,7 @@ $ yt-dl-ipfs
  | | | | __|____ / _` | |_____| | '_ \| |_/ __|
  | |_| | ||_____| (_| | |_____| | |_) |  _\__ \
   \__, |\__|     \__,_|_|     |_| .__/|_| |___/
-  |___/                         |_|             v0.1.9
+  |___/                         |_|             v0.1.10
 
 
 ? Enter YouTube URL:
@@ -55,7 +55,7 @@ $ docker run -it whizzkid/yt-dl-ipfs:latest
  | | | | __|____ / _` | |_____| | '_ \| |_/ __|
  | |_| | ||_____| (_| | |_____| | |_) |  _\__ \
   \__, |\__|     \__,_|_|     |_| .__/|_| |___/
-  |___/                         |_|             v0.1.9
+  |___/                         |_|             v0.1.10
 
 
 ? Enter YouTube URL:
@@ -75,7 +75,7 @@ $ npm run build && npm start
  | | | | __|____ / _` | |_____| | '_ \| |_/ __|
  | |_| | ||_____| (_| | |_____| | |_) |  _\__ \
   \__, |\__|     \__,_|_|     |_| .__/|_| |___/
-  |___/                         |_|             v0.1.9
+  |___/                         |_|             v0.1.10
 
 
 ? Enter YouTube URL:
